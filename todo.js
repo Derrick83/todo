@@ -14,9 +14,18 @@ var todoList =
 	addToDo : function(todo){
 		this.todos.push(todo);
 		this.displayToDos();
+	},
+	changeToDo: function(position,newValue){
+		this.todos[position] = newValue;
+		this.displayToDos();
+	},
+	deleteToDo: function(position){
+		this.todos.splice(position,1);
+		this.displayToDos();
 	}
 }
 
 c(todoList.addToDo('derrick'))
+c(todoList.changeToDo(0,'steven'))
 
 
