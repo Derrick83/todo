@@ -3,6 +3,12 @@ function c(something){
 	console.log(something);
 }
 
+//data structure example for todo object.
+// {
+// 	toDoText : 'item1',
+// 	completed : true
+// }
+
 var todoList =
 {
 	//make empty list to keep todo requests
@@ -11,8 +17,11 @@ var todoList =
 	displayToDos: function(){
 		console.log('My Todos: '+this.todos)
 	},
-	addToDo : function(todo){
-		this.todos.push(todo);
+	addToDo : function(toDoText){
+		this.todos.push({
+			todoText : toDoText,
+			completed : false
+		});
 		this.displayToDos();
 	},
 	changeToDo: function(position,newValue){
@@ -25,7 +34,10 @@ var todoList =
 	}
 }
 
-c(todoList.addToDo('derrick'))
-c(todoList.changeToDo(0,'steven'))
+
+
+var x = todoList.addToDo('code')
+console.log(JSON.stringify(x))
+
 
 
